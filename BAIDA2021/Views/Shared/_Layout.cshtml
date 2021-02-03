@@ -1,0 +1,778 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>BaidaPack</title>
+    <!-- Favicon-->
+    <link rel="icon" href="~/rtl/imagebaidapack/BOX 4.png" type="image/x-icon">
+    <!-- Colorpicker Css -->
+
+    <link href="~/rtl/assets/js/bundles/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css" rel="stylesheet" />
+    <!-- Multi Select Css -->
+    <link href="~/rtl/assets/js/bundles/multiselect/css/multi-select.css" rel="stylesheet">
+    <!-- Plugins Core Css -->
+    <link href="~/rtl/assets/css/app.min.css" rel="stylesheet">
+    <link href="~/rtl/assets/js/bundles/materialize-rtl/materialize-rtl.min.css" rel="stylesheet">
+    <link href="~/rtl/assets/css/form.min.css" rel="stylesheet">
+    <!-- Custom Css -->
+    <link href="~/rtl/assets/css/style.css" rel="stylesheet">
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="~/rtl/assets/css/styles/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="light rtl">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30">
+                <img class="loading-img-spin" src="~/rtl/assets/images/loading.png" width="20" height="20" alt="admin">
+            </div>
+
+            <p>الرجاء الانتظار</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse"
+                   data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="#" onClick="return false;" class="bars"></a>
+                <a class="navbar-brand" href="index.html">
+                    <img src="~/rtl/assets/images/logo.png" alt="" />
+                    <span class="logo-name">BaidaPack</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="pull-right">
+                    <li>
+                        <a href="#" onClick="return false;" class="sidemenu-collapse">
+                            <i class="material-icons">reorder</i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Full Screen Button -->
+                    <li class="fullscreen">
+                        <a href="javascript:;" class="fullscreen-btn">
+                            <i class="fas fa-expand"></i>
+                        </a>
+                    </li>
+                    <!-- #END# Full Screen Button -->
+                    <!-- #START# Notifications-->
+                    <li class="dropdown">
+                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
+                           role="button">
+                            <i class="far fa-bell"></i>
+                            <span class="label-count bg-orange"></span>
+                        </a>
+                        <ul class="dropdown-menu pullDown">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="~/rtl/assets/images/user/user1.jpg" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Sarah Smith</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 14 mins ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="~/rtl/assets/images/user/user2.jpg" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Airi Satou</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 22 mins ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="~/rtl/assets/images/user/user3.jpg" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">John Doe</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="~/rtl/assets/images/user/user4.jpg" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Ashton Cox</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 2 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="~/rtl/assets/images/user/user5.jpg" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Cara Stevens</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 4 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="~/rtl/assets/images/user/user6.jpg" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">Charde Marshall</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span class="table-img msg-user">
+                                                <img src="~/rtl/assets/images/user/user7.jpg" alt="">
+                                            </span>
+                                            <span class="menu-info">
+                                                <span class="menu-title">John Doe</span>
+                                                <span class="menu-desc">
+                                                    <i class="material-icons">access_time</i> Yesterday
+                                                </span>
+                                                <span class="menu-desc">Please check your email.</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="#" onClick="return false;">View All Notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Notifications-->
+                    <li class="dropdown user_profile">
+                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
+                           role="button">
+                            <img src="~/rtl/assets/images/user/usrbig3.jpg" width="32" height="32" alt="User">
+                        </a>
+                        <ul class="dropdown-menu pullDown">
+                            <li class="body">
+                                <ul class="user_dw_menu">
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <i class="material-icons">person</i>Profile
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <i class="material-icons">power_settings_new</i>Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Tasks -->
+                    <li class="pull-right">
+                        <a href="#" onClick="return false;" class="js-right-sidebar" data-close="true">
+                            <i class="fas fa-cog"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <div>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="sidebar-user-panel active">
+                        <div class="user-panel">
+                            <div class="image">
+
+                                <img src="~/rtl/assets/images/user/usrbig3.jpg" class="img-circle user-img-circle" alt="User Image" />
+
+                            </div>
+                        </div>
+                        <div class="profile-usertitle">
+                            <div class="sidebar-userpic-name"> عمر سرطاوي </div>
+                            <div class="profile-usertitle-job ">Manager </div>
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <a href="/Home/Action">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>التسعيرة</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>
+                                أذونات التشغيل وطلبات مبيعات
+                            </span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="/Run_permissions/Permission_to_operate">إصدار اذن التشغيل </a>
+                            </li>
+                            <li>
+                                <a href="/Run_permissions/all_Permission_to_operate">جميع أذونات التشغيل</a>
+                            </li>
+                            <li>
+                                <a href="/Run_permissions/all_Permission_Not_Complet">أذونات تشغيل غير مكتملة </a>
+                            </li>
+                            <li>
+                                <a href="/Run_permissions/all_Permission_Canceled">أذونات تشغيل ملغية </a>
+                            </li>
+                            <li>
+                                <a href="#">جميع اوامر الشراء</a>
+                            </li>
+                            <li>
+                                <a href="#">طلب المبيعات</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="fas fa-people-carry"></i>
+                            <span>
+                                مرحلة قبل الطباعة
+                            </span>
+                        </a>
+                        <ul class="ml-menu">
+
+
+                            <li>
+                                <a href="#" onClick="return false;">
+                                    <span>الارشيف</span>
+                                </a>
+
+                            </li>
+
+
+
+
+                            <li>
+                                <a href="#" onClick="return false;" class="menu-toggle">
+                                    <span>المونتاج</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span> اذونات تشغيل جاهزة </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span> اذونات تشغيل غير جاهزة </span>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
+
+                            <li>
+                                <a href="#">طلب الورق من المستودع</a>
+                            </li>
+
+                            <li>
+                                <a href="#" onClick="return false;" class="menu-toggle">
+                                    <span>القطع</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span> شيتر </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">
+                                            <span> مقطع </span>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
+
+
+
+
+                        </ul>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-print"></i>
+                            <span>الطباعة</span>
+                        </a>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>
+                                مرحلة بعد الطباعة
+                            </span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="#">القص والتشكيل</a>
+                            </li>
+                            <li>
+                                <a href="#">التغرية</a>
+                            </li>
+                            <li>
+                                <a href="#">التعبئة و التغليف</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="fab fa-readme"></i>
+                            <span>المستودعات</span>
+                        </a>
+                        <ul class="ml-menu">
+
+                            <li>
+                                <a href="/Warehouses/GetAlltypeCorton">مواصفات  الكرتون او الورق  </a>
+                            </li>
+
+                            <li>
+                                <a href="/Warehouses/reqfirst">طلب شراء اولي للمواد    </a>
+                            </li>
+                            <li>
+                                <a href="/Warehouses/GetAllWarh">مستودعات الورق والكرتون </a>
+                            </li>
+                            <li>
+                                <a href="#">موافقة امين المستودع على صرف الورق او الكرتون</a>
+                            </li>
+                            <li>
+                                <a href="#">الاحبار والمواد المساعدة</a>
+                            </li>
+                            <li>
+                                <a href="#">الجاهز للتسليم</a>
+                            </li>
+
+                            <li>
+                                <a href="#" onClick="return false;" class="menu-toggle">
+                                    <span>اضافة مستلزمات الى المستودع</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="#">خلط الحبر </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/setting_Permission_to_operate/Carton_packing">اضافة كرتون التعبئة</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">مواد مساعدة</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+
+
+
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>موافقة مدير الانتاج</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user-md"></i>
+                            <span>QA متابعة العمليات  </span>
+                        </a>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#">
+                            <i class="far fa-calendar"></i>
+                            <span>المحاسبة </span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="fab fa-readme"></i>
+                            <span>تقارير</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="#">تقارير نظام متابعة العمل اليومي </a>
+                            </li>
+                            <li>
+                                <a href="#">تقارير المخزن</a>
+                            </li>
+                            <li>
+                                <a href="#">تقارير التالف </a>
+                            </li>
+                            <li>
+                                <a href="#">تقاريرالمرتجع</a>
+                            </li>
+                            <li>
+                                <a href="#">تقارير مواعيد التسليم  </a>
+                            </li>
+                            <li>
+                                <a href="#">تقارير حجم الانتاج علب   </a>
+                            </li>
+
+                            <li>
+                                <a href="#">تقارير حجم الانتاج نشرات   </a>
+                            </li>
+
+                            <li>
+                                <a href="#">ملخص المخزن</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="fas fa-angle-double-down"></i>
+                            <span>الاعدادات</span>
+                        </a>
+                        <ul class="ml-menu">
+
+
+
+                            <li>
+                                <a href="#" onClick="return false;" class="menu-toggle">
+                                    <span>اعدادات اصدار اذن تشغيل</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="/setting_Permission_to_operate/Product_Type_Index">
+                                            <span>نوع المنتج</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/setting_Permission_to_operate/Special_additions_Index">
+                                            <span>اضافات خاصة بالمنتج</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+                                @*(((RazorView)ViewContext.View).ViewPath*@
+                                <a href="#" onClick="return false;" class="menu-toggle">
+                                    <span>اعدادات المنونتاج</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="#">
+                                            <span> اضافة قالب جديد</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/setting_Permission_to_operate/ReqArchef">
+                                            <span> اضافة متطلبات خاصة للارشيف</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/setting_Permission_to_operate/GettColors">
+                                            <span> إضافة لون</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" onClick="return false;" class="menu-toggle">
+
+                                    <span>
+                                        مستخدمون النظام
+                                    </span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="#">اضافة مستخدم</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">اضافة صلاحيات</a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/setting_Permission_to_operate/Machines" onClick="return true;">
+
+                                    <span>الالات</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a href="#" onClick="return false;" class="menu-toggle">
+
+                                    <span>شركات</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="/setting_Permission_to_operate/addCompany">اضافة شركة </a>
+                                    </li>
+                                    <li>
+                                        <a href="/setting_Permission_to_operate/Company">تفاصيل الشركات </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" onClick="return false;" class="menu-toggle">
+                                    <span>اعدادات التسعيرة</span>
+                                </a>
+                                <ul class="ml-menu">
+
+                                    <li>
+                                        <a href="#" onClick="return false;" class="menu-toggle">
+                                            <span>خطوط الانتاج</span>
+                                        </a>
+                                        <ul class="ml-menu">
+                                            <li>
+                                                <a href="#" onClick="return false;">
+                                                    <span>اضافة خط انتاج</span>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#" onClick="return false;" class="menu-toggle">
+                                            <span>الموظفين</span>
+                                        </a>
+                                        <ul class="ml-menu">
+                                            <li>
+                                                <a href="#" onClick="return false;">
+                                                    <span>اضافة موظف</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/setting_Permission_to_operate/Employee">
+                                                    <span>تفاصيل الموظفين</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" onClick="return false;">
+                                                    <span>اسناد موظف لخط الانتاج</span>
+                                                </a>
+                                            </li>
+
+
+
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" onClick="return false;" class="menu-toggle">
+                                            <span>الاستهلاكات</span>
+                                        </a>
+                                        <ul class="ml-menu">
+                                            <li>
+                                                <a href="#" onClick="return false;">
+                                                    <span>اضافة استهلاك</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" onClick="return false;">
+                                                    <span> تفاصيل الاستهلاكات</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" onClick="return false;">
+                                                    <span>اسناد استهلاك لخط الانتاج </span>
+                                                </a>
+                                            </li>
+
+
+
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;" class="menu-toggle">
+                                            <span>المصاريف</span>
+                                        </a>
+                                        <ul class="ml-menu">
+                                            <li>
+                                                <a href="#" onClick="return false;">
+                                                    <span>اضافة مصروف</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" onClick="return false;">
+                                                    <span>تفاصيل المصاريف</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" onClick="return false;">
+                                                    <span>اسناد  مصروف لخط الانتاج </span>
+                                                </a>
+                                            </li>
+
+
+
+                                        </ul>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#">اضافة الة  </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">التفاصيل  </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">التسعيرة  </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">عرض السعر  </a>
+                                    </li>
+
+                                </ul>
+
+
+
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+            <!-- #Menu -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                <li role="presentation">
+                    <a href="#skins" data-toggle="tab" class="active">الالوان</a>
+                </li>
+
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane in active in active stretchLeft" id="skins">
+                    <div class="demo-skin">
+
+                        <div class="rightSetting">
+                            <p>الوان  القائمة </p>
+                            <button type="button"
+                                    class="btn btn-sidebar-light btn-border-radius p-l-20 p-r-20">
+                                ابيض
+                            </button>
+                            <button type="button"
+                                    class="btn btn-sidebar-dark btn-default btn-border-radius p-l-20 p-r-20">
+                                اسود
+                            </button>
+                        </div>
+                        <div class="rightSetting">
+                            <p>الوان البرنامج</p>
+                            <button type="button"
+                                    class="btn btn-theme-light btn-border-radius p-l-20 p-r-20">
+                                ابيض
+                            </button>
+                            <button type="button"
+                                    class="btn btn-theme-dark btn-default btn-border-radius p-l-20 p-r-20">
+                                اسود
+                            </button>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </div>
+
+    @RenderBody()
+    <!-- Plugins Js -->
+
+
+
+
+</body>

@@ -1,0 +1,309 @@
+﻿@model BAIDA2021.ClassProject.Specification
+
+@{
+    ViewBag.Title = "Addspecifications";
+}
+
+<head>
+
+    <!-- Colorpicker Css -->
+    <!-- Multi Select Css -->
+    <link href="~/rtl/assets/js/bundles/multiselect/css/multi-select.css" rel="stylesheet">
+    <!-- Plugins Core Css -->
+    <link href="~/rtl/assets/css/app.min.css" rel="stylesheet">
+    <link href="~/rtl/assets/js/bundles/materialize-rtl/materialize-rtl.min.css" rel="stylesheet">
+    <link href="~/rtl/assets/css/form.min.css" rel="stylesheet">
+    <!-- Custom Css -->
+    <link href="~/rtl/assets/css/style.css" rel="stylesheet">
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="~/rtl/assets/css/styles/all-themes.css" rel="stylesheet" />
+</head>
+<style>
+    #delevary_Place {
+        display: block;
+    }
+</style>
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">المستودعات</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a href="#">
+                                <i class="fas fa-home"></i>اضافة مواصفة
+
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+           @ViewData["nametype"] : النوع الكرتون 
+        </div>
+
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title"></h4>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        @using (Html.BeginForm("Addspecifications", "Warehouses", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="body">
+
+                            <div class="row clearfix">
+
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.company_name, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+                                            <label class="form-label">اسم الشركة المصنعة </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.HiddenFor(x => x.id)
+
+
+                                            @Html.EditorFor(x => x.naemcarton, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+
+
+                                            <label class="form-label">اسم الورق او الكرتون </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.wakilmahalt, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+                                            <label class="form-label">وكيل محلي </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.wakelalami, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+                                            <label class="form-label">وكيل عالمي  </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.numpermwasafh, new { HtmlAttributes = new { @class = "form-control", type = "number" } })
+                                            <label class="form-label">رقم المواصفة  </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.contry, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+                                            <label class="form-label">بلد المنشا </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.refec, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+                                            <label class="form-label">ref </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.phone_Supplier, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+                                            <label class="form-label">رقم المورد </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.Email, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+                                            <label class="form-label">الايميل </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.website, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+                                            <label class="form-label">موقع الشركة  </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.numgemshet, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+                                            <label class="form-label">رقم المورد حسب جيمشيت </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @Html.EditorFor(x => x.Note, new { HtmlAttributes = new { @class = "form-control", type = "text" } })
+                                            <label class="form-label">ملاحظات </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+
+
+                                    <div class="file-field input-field">
+                                        <div class="btn">
+                                            <span>المواصفة</span>
+                                            <input type="file" name="upload">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                @Html.HiddenFor(x => x.idtypcoton, new { @Value = ViewData["id"] })
+
+
+
+
+
+
+
+
+
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <button type="submit" class="btn btn-success waves-effect">حفظ </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+
+
+
+
+
+    </div>
+</section>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/rtl/assets/js/app.min.js"></script>
+<script src="~/rtl/assets/js/form.min.js"></script>
+<script src="~/rtl/assets/js/bundles/multiselect/js/jquery.multi-select.js"></script>
+<script src="~/rtl/assets/js/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+<!-- Custom Js -->
+<script src="~/rtl/assets/js/admin.js"></script>
+<script src="~/rtl/assets/js/pages/forms/advanced-form-elements.js"></script>
+
+
+

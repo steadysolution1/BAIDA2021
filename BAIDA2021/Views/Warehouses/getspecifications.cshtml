@@ -1,0 +1,210 @@
+﻿@model IEnumerable<BAIDA2021.ClassProject.Specification>
+@{
+    ViewBag.Title = "getspecifications";
+}
+
+
+<!-- Multi Select Css -->
+<link href="~/rtl/assets/js/bundles/multiselect/css/multi-select.css" rel="stylesheet">
+<!-- Plugins Core Css -->
+<link href="~/rtl/assets/css/app.min.css" rel="stylesheet">
+<link href="~/rtl/assets/js/bundles/materialize-rtl/materialize-rtl.min.css" rel="stylesheet">
+<link href="~/rtl/assets/css/form.min.css" rel="stylesheet">
+<!-- Custom Css -->
+<link href="~/rtl/assets/css/style.css" rel="stylesheet">
+<!-- You can choose a theme from css/styles instead of get all themes -->
+<link href="~/rtl/assets/css/styles/all-themes.css" rel="stylesheet" />
+
+<style>
+    .table th, .table td {
+        padding: 0.14rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        text-align: center;
+    }
+</style>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">المستودعات</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a href="/Warehouses/GetAlltypeCorton">
+                                <i class="fas fa-home"></i>نوع الورق او الكرتون
+
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">@ViewData["nametype"] : النوع الكرتون </h4>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="body">
+                <div class="button-demo">
+
+                    <input type="button" class="btn-hover btn-border-radius color-1" value="إضافة " onclick="location.href='@Url.Action("Addspecifications", "Warehouses",new {id=ViewData["id"]})'" />
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Exportable Table -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table id="tableExport"
+                                   class="display table table-hover table-checkable order-column m-t-20 width-per-100">
+                                <thead>
+                                    <tr>
+                                        <th>اسم الشركة المصنعة   </th>
+                                        <th>اسم الورق او الكرتون   </th>
+                                        <th>وكيل محلي   </th>
+                                        <th>وكيل عالمي   </th>
+                                        <th>رقم المواصفة   </th>
+                                        <th>بلد المنشا    </th>
+                                        <th>رقم المواصفة   </th>
+                                        <th>بلد المنشا    </th>
+
+
+
+                                        <th>ref   </th>
+                                        <th>رقم المورد </th>
+
+                                        <th>الايمل</th>
+                                        <th>موقع الشركة </th>
+
+                                        <th>رقم جيمشيت </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.ActionLink(item.naemcarton, "Awzan", "Warehouses",
+                 new { id = item.id }, // <-- Route value
+                 null // <-- htmlArguments
+                )
+
+
+                                            </td>
+                                            <td>@item.company_name </td>
+                                            <td>@item.website </td>
+
+
+                                            <td>
+
+
+
+
+                                                <button class="btn tblActnBtn">
+
+                                                    <a href='@Url.Action("Viewspecifications", "Warehouses",new { @id =item.id})' title="التفاصيل">
+
+                                                        <i class="material-icons">visibility</i>
+                                                    </a>
+                                                </button>
+                                                <button class="btn tblActnBtn" onclick="return confirm('هل انت متأكد؟')" title="حذف">
+                                                    <a href='@Url.Action("Deletespecifications", "Warehouses",new { @id =item.id})'>
+
+                                                        <i class="material-icons">delete</i>
+                                                    </a>
+                                                </button>
+
+
+
+
+
+
+
+                                                <button onclick="read(this)" class="btn tblActnBtn">
+
+                                                    <a href="~/DataFile/MwasfihCaeton/@item.pdfd" target="_blank">
+
+                                                        <i class="material-icons">cloud_download</i>
+                                                    </a>
+                                                </button>
+
+
+                                            </td>
+                                        </tr>
+
+                                    }
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>اسم الكرتون او الورق  </th>
+                                        <th>اسم الشركة   </th>
+
+                                        <th>موقع الشركة</th>
+
+                                        <th></th>
+
+
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Exportable Table -->
+    </div>
+</section>
+
+
+
+<script src="~/rtl/assets/js/app.min.js"></script>
+<script src="~/rtl/assets/js/table.min.js"></script>
+<!-- Custom Js -->
+<script src="~/rtl/assets/js/admin.js"></script>
+
+<script src="~/rtl/assets/js/bundles/export-tables/dataTables.buttons.min.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/buttons.flash.min.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/jszip.min.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/pdfmake.min.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/vfs_fonts.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/buttons.html5.min.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/buttons.print.min.js"></script>
+<script src="~/rtl/assets/js/pages/tables/jquery-datatable.js"></script>
+
+
+
+
+
+
+

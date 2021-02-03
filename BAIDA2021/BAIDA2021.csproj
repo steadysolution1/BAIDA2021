@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{493EFD8C-C25B-4FD5-8E5A-8B6D060E3132}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BAIDA2021</RootNamespace>
+    <AssemblyName>BAIDA2021</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="rtl\assets\css\app.min.css" />
+    <Content Include="rtl\assets\css\form.min.css" />
+    <Content Include="rtl\assets\css\owl.video.play.html" />
+    <Content Include="rtl\assets\css\pages\authentication.css" />
+    <Content Include="rtl\assets\css\pages\extra_pages.css" />
+    <Content Include="rtl\assets\css\style.css" />
+    <Content Include="rtl\assets\css\styles\all-themes.css" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-brands-400.svg" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-regular-400.svg" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-solid-900.svg" />
+    <Content Include="rtl\assets\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="rtl\assets\fonts\Simple-Line-Iconsb26c-2.html" />
+    <Content Include="rtl\assets\fonts\Simple-Line-Iconsb26c-3.html" />
+    <Content Include="rtl\assets\fonts\Simple-Line-Iconsb26c-4.html" />
+    <Content Include="rtl\assets\fonts\Simple-Line-Iconsb26c-5.html" />
+    <Content Include="rtl\assets\fonts\Simple-Line-Iconsb26c.html" />
+    <Content Include="rtl\assets\images\bg-01.jpg" />
+    <Content Include="rtl\assets\images\details_close.png" />
+    <Content Include="rtl\assets\images\details_open.png" />
+    <Content Include="rtl\assets\images\favicon.ico" />
+    <Content Include="rtl\assets\images\image-gallery\1.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\10.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\11.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\12.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\13.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\14.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\15.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\16.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\17.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\18.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\19.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\2.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\20.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\3.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\4.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\5.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\6.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\7.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\8.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\9.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-1.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-10.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-11.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-12.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-13.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-14.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-15.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-16.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-17.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-18.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-19.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-2.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-20.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-3.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-4.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-5.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-6.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-7.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-8.jpg" />
+    <Content Include="rtl\assets\images\image-gallery\thumb\thumb-9.jpg" />
+    <Content Include="rtl\assets\images\loading.png" />
+    <Content Include="rtl\assets\images\logo.png" />
+    <Content Include="rtl\assets\images\media.png" />
+    <Content Include="rtl\assets\images\pages\bg-01.png" />
+    <Content Include="rtl\assets\images\pages\bg-02.png" />
+    <Content Include="rtl\assets\images\posts\post1.jpg" />
+    <Content Include="rtl\assets\images\posts\post11.jpg" />
+    <Content Include="rtl\assets\images\posts\post12.jpg" />
+    <Content Include="rtl\assets\images\posts\post13.jpg" />
+    <Content Include="rtl\assets\images\posts\post2.jpg" />
+    <Content Include="rtl\assets\images\posts\post3.jpg" />
+    <Content Include="rtl\assets\images\posts\post4.jpg" />
+    <Content Include="rtl\assets\images\posts\post5.jpg" />
+    <Content Include="rtl\assets\images\posts\post6.jpg" />
+    <Content Include="rtl\assets\images\posts\post7.jpg" />
+    <Content Include="rtl\assets\images\posts\post8.jpg" />
+    <Content Include="rtl\assets\images\posts\post9.jpg" />
+    <Content Include="rtl\assets\images\products\p-13.jpg" />
+    <Content Include="rtl\assets\images\products\p-14.jpg" />
+    <Content Include="rtl\assets\images\products\p-15.jpg" />
+    <Content Include="rtl\assets\images\products\p-16.jpg" />
+    <Content Include="rtl\assets\images\products\p-17.jpg" />
+    <Content Include="rtl\assets\images\products\p-18.jpg" />
+    <Content Include="rtl\assets\images\products\p-19.jpg" />
+    <Content Include="rtl\assets\images\products\p-20.jpg" />
+    <Content Include="rtl\assets\images\products\p1.jpg" />
+    <Content Include="rtl\assets\images\products\p10-1.jpg" />
+    <Content Include="rtl\assets\images\products\p10.jpg" />
+    <Content Include="rtl\assets\images\products\p11-1.jpg" />
+    <Content Include="rtl\assets\images\products\p11.jpg" />
+    <Content Include="rtl\assets\images\products\p12-1.jpg" />
+    <Content Include="rtl\assets\images\products\p12.jpg" />
+    <Content Include="rtl\assets\images\products\p2.jpg" />
+    <Content Include="rtl\assets\images\products\p3.jpg" />
+    <Content Include="rtl\assets\images\products\p4.jpg" />
+    <Content Include="rtl\assets\images\products\p5.jpg" />
+    <Content Include="rtl\assets\images\products\p6.jpg" />
+    <Content Include="rtl\assets\images\products\p7-1.jpg" />
+    <Content Include="rtl\assets\images\products\p7.jpg" />
+    <Content Include="rtl\assets\images\products\p8-1.jpg" />
+    <Content Include="rtl\assets\images\products\p8.jpg" />
+    <Content Include="rtl\assets\images\products\p9-1.jpg" />
+    <Content Include="rtl\assets\images\products\p9.jpg" />
+    <Content Include="rtl\assets\images\user-img-background.html" />
+    <Content Include="rtl\assets\images\user.jpg" />
+    <Content Include="rtl\assets\images\user\user1.jpg" />
+    <Content Include="rtl\assets\images\user\user10.jpg" />
+    <Content Include="rtl\assets\images\user\user11.jpg" />
+    <Content Include="rtl\assets\images\user\user2.jpg" />
+    <Content Include="rtl\assets\images\user\user3.jpg" />
+    <Content Include="rtl\assets\images\user\user4.jpg" />
+    <Content Include="rtl\assets\images\user\user5.jpg" />
+    <Content Include="rtl\assets\images\user\user6.jpg" />
+    <Content Include="rtl\assets\images\user\user7.jpg" />
+    <Content Include="rtl\assets\images\user\user8.jpg" />
+    <Content Include="rtl\assets\images\user\user9.jpg" />
+    <Content Include="rtl\assets\images\user\usrbig1.jpg" />
+    <Content Include="rtl\assets\images\user\usrbig2.jpg" />
+    <Content Include="rtl\assets\images\user\usrbig3.jpg" />
+    <Content Include="rtl\assets\images\user\usrbig4.jpg" />
+    <Content Include="rtl\assets\images\user\usrbig5.jpg" />
+    <Content Include="rtl\assets\images\user\usrbig6.jpg" />
+    <Content Include="rtl\assets\images\user\usrbig7.jpg" />
+    <Content Include="rtl\assets\images\user\usrbig8.jpg" />
+    <Content Include="rtl\assets\images\user\usrbig9.jpg" />
+    <Content Include="rtl\assets\images\usrbig.jpg" />
+    <Content Include="rtl\assets\js\admin.js" />
+    <Content Include="rtl\assets\js\app.min.js" />
+    <Content Include="rtl\assets\js\bundles\amcharts4\animated.js" />
+    <Content Include="rtl\assets\js\bundles\amcharts4\charts.js" />
+    <Content Include="rtl\assets\js\bundles\amcharts4\core.js" />
+    <Content Include="rtl\assets\js\bundles\amcharts4\maps.js" />
+    <Content Include="rtl\assets\js\bundles\amcharts4\worldLow.js" />
+    <Content Include="rtl\assets\js\bundles\apexcharts\apexcharts.min.js" />
+    <Content Include="rtl\assets\js\bundles\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
+    <Content Include="rtl\assets\js\bundles\bootstrap-colorpicker\dist\js\bootstrap-colorpicker.js" />
+    <Content Include="rtl\assets\js\bundles\ckeditor\ckeditor.js" />
+    <Content Include="rtl\assets\js\bundles\echart\echarts.js" />
+    <Content Include="rtl\assets\js\bundles\export-tables\buttons.flash.min.js" />
+    <Content Include="rtl\assets\js\bundles\export-tables\buttons.html5.min.js" />
+    <Content Include="rtl\assets\js\bundles\export-tables\buttons.print.min.js" />
+    <Content Include="rtl\assets\js\bundles\export-tables\dataTables.buttons.min.js" />
+    <Content Include="rtl\assets\js\bundles\export-tables\jszip.min.js" />
+    <Content Include="rtl\assets\js\bundles\export-tables\pdfmake.min.js" />
+    <Content Include="rtl\assets\js\bundles\export-tables\vfs_fonts.js" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\css\lightgallery.css" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\fonts\lgd641.svg" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\img\loading.gif" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\img\video-play.png" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\img\vimeo-play.png" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\img\youtube-play.png" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\js\lightgallery-all.js" />
+    <Content Include="rtl\assets\js\bundles\materialize-rtl\materialize-rtl.min.css" />
+    <Content Include="rtl\assets\js\bundles\multiselect\css\multi-select.css" />
+    <Content Include="rtl\assets\js\bundles\multiselect\img\switch.png" />
+    <Content Include="rtl\assets\js\bundles\multiselect\js\jquery.multi-select.js" />
+    <Content Include="rtl\assets\js\bundles\rangeSlider\css\ion.rangeSlider.css" />
+    <Content Include="rtl\assets\js\bundles\rangeSlider\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="rtl\assets\js\bundles\rangeSlider\img\sprite-skin-flat.png" />
+    <Content Include="rtl\assets\js\bundles\rangeSlider\js\ion.rangeSlider.js" />
+    <Content Include="rtl\assets\js\bundles\tinymce\tinymce.min.js" />
+    <Content Include="rtl\assets\js\chart.min.js" />
+    <Content Include="rtl\assets\js\form.min.js" />
+    <Content Include="rtl\assets\js\map.min.js" />
+    <Content Include="rtl\assets\js\pages\apps\calendar.js" />
+    <Content Include="rtl\assets\js\pages\apps\chat.js" />
+    <Content Include="rtl\assets\js\pages\apps\dragdrop.js" />
+    <Content Include="rtl\assets\js\pages\apps\portfolio.js" />
+    <Content Include="rtl\assets\js\pages\apps\support.js" />
+    <Content Include="rtl\assets\js\pages\apps\task.js" />
+    <Content Include="rtl\assets\js\pages\cards\basic.js" />
+    <Content Include="rtl\assets\js\pages\charts\amchart.js" />
+    <Content Include="rtl\assets\js\pages\charts\apexcharts.js" />
+    <Content Include="rtl\assets\js\pages\charts\chartjs.js" />
+    <Content Include="rtl\assets\js\pages\charts\echarts.js" />
+    <Content Include="rtl\assets\js\pages\charts\flot.js" />
+    <Content Include="rtl\assets\js\pages\charts\jquery-knob.js" />
+    <Content Include="rtl\assets\js\pages\charts\morris.js" />
+    <Content Include="rtl\assets\js\pages\charts\sparkline.js" />
+    <Content Include="rtl\assets\js\pages\dashboard\dashboard2.js" />
+    <Content Include="rtl\assets\js\pages\dashboard\dashboard3.js" />
+    <Content Include="rtl\assets\js\pages\ecommerce\product-detail.js" />
+    <Content Include="rtl\assets\js\pages\examples\login-register.js" />
+    <Content Include="rtl\assets\js\pages\examples\pages.js" />
+    <Content Include="rtl\assets\js\pages\forms\advanced-form-elements.js" />
+    <Content Include="rtl\assets\js\pages\forms\basic-form-elements.js" />
+    <Content Include="rtl\assets\js\pages\forms\editors.js" />
+    <Content Include="rtl\assets\js\pages\forms\form-validation.js" />
+    <Content Include="rtl\assets\js\pages\forms\form-wizard.js" />
+    <Content Include="rtl\assets\js\pages\index.js" />
+    <Content Include="rtl\assets\js\pages\maps\google.js" />
+    <Content Include="rtl\assets\js\pages\maps\jqvmap.js" />
+    <Content Include="rtl\assets\js\pages\medias\carousel.js" />
+    <Content Include="rtl\assets\js\pages\medias\image-gallery.js" />
+    <Content Include="rtl\assets\js\pages\sparkline\sparkline-data.js" />
+    <Content Include="rtl\assets\js\pages\tables\jquery-datatable.js" />
+    <Content Include="rtl\assets\js\pages\todo\todo.js" />
+    <Content Include="rtl\assets\js\pages\ui\collapse.js" />
+    <Content Include="rtl\assets\js\pages\ui\dialogs.js" />
+    <Content Include="rtl\assets\js\pages\ui\notifications.js" />
+    <Content Include="rtl\assets\js\pages\ui\range-sliders.js" />
+    <Content Include="rtl\assets\js\pages\widgets\widget.js" />
+    <Content Include="rtl\assets\js\table.min.js" />
+    <Content Include="rtl\imagebaidapack\BOX 4.png" />
+    <Content Include="rtl\imagebaidapack\Spinner-1.1s-200px.gif" />
+    <Content Include="rtl\index.html" />
+    <Content Include="rtl\pages\apps\calendar.html" />
+    <Content Include="rtl\pages\apps\chat.html" />
+    <Content Include="rtl\pages\apps\contact_grid.html" />
+    <Content Include="rtl\pages\apps\contact_list.html" />
+    <Content Include="rtl\pages\apps\dragdrop.html" />
+    <Content Include="rtl\pages\apps\portfolio.html" />
+    <Content Include="rtl\pages\apps\support.html" />
+    <Content Include="rtl\pages\apps\task.html" />
+    <Content Include="rtl\pages\charts\amchart.html" />
+    <Content Include="rtl\pages\charts\apexchart.html" />
+    <Content Include="rtl\pages\charts\chartjs.html" />
+    <Content Include="rtl\pages\charts\echart.html" />
+    <Content Include="rtl\pages\charts\flot.html" />
+    <Content Include="rtl\pages\charts\jquery-knob.html" />
+    <Content Include="rtl\pages\charts\morris.html" />
+    <Content Include="rtl\pages\charts\sparkline.html" />
+    <Content Include="rtl\pages\dashboard\dashboard2.html" />
+    <Content Include="rtl\pages\dashboard\dashboard3.html" />
+    <Content Include="rtl\pages\ecommerce\cart.html" />
+    <Content Include="rtl\pages\ecommerce\invoice.html" />
+    <Content Include="rtl\pages\ecommerce\product-detail.html" />
+    <Content Include="rtl\pages\ecommerce\product-list.html" />
+    <Content Include="rtl\pages\ecommerce\products.html" />
+    <Content Include="rtl\pages\email\compose.html" />
+    <Content Include="rtl\pages\email\inbox.html" />
+    <Content Include="rtl\pages\email\mail-inbox.html" />
+    <Content Include="rtl\pages\email\view-mail.html" />
+    <Content Include="rtl\pages\examples\404.html" />
+    <Content Include="rtl\pages\examples\500.html" />
+    <Content Include="rtl\pages\examples\blank.html" />
+    <Content Include="rtl\pages\examples\faqs.html" />
+    <Content Include="rtl\pages\examples\forgot-password.html" />
+    <Content Include="rtl\pages\examples\invoice.html" />
+    <Content Include="rtl\pages\examples\locked.html" />
+    <Content Include="rtl\pages\examples\login-register.html" />
+    <Content Include="rtl\pages\examples\login.html" />
+    <Content Include="rtl\pages\examples\login2.html" />
+    <Content Include="rtl\pages\examples\pricing.html" />
+    <Content Include="rtl\pages\examples\profile.html" />
+    <Content Include="rtl\pages\examples\register.html" />
+    <Content Include="rtl\pages\examples\register2.html" />
+    <Content Include="rtl\pages\forms\advanced-form-elements.html" />
+    <Content Include="rtl\pages\forms\basic-form-elements.html" />
+    <Content Include="rtl\pages\forms\editors.html" />
+    <Content Include="rtl\pages\forms\form-examples.html" />
+    <Content Include="rtl\pages\forms\form-validation.html" />
+    <Content Include="rtl\pages\forms\form-wizard.html" />
+    <Content Include="rtl\pages\icons\font-awesome.html" />
+    <Content Include="rtl\pages\icons\material-icons.html" />
+    <Content Include="rtl\pages\maps\google.html" />
+    <Content Include="rtl\pages\maps\jqvmap.html" />
+    <Content Include="rtl\pages\medias\carousel.html" />
+    <Content Include="rtl\pages\medias\image-gallery.html" />
+    <Content Include="rtl\pages\tables\advance-tables.html" />
+    <Content Include="rtl\pages\tables\child-row-table.html" />
+    <Content Include="rtl\pages\tables\export-table.html" />
+    <Content Include="rtl\pages\tables\group-table.html" />
+    <Content Include="rtl\pages\tables\normal-tables.html" />
+    <Content Include="rtl\pages\timeline\timeline.html" />
+    <Content Include="rtl\pages\timeline\timeline2.html" />
+    <Content Include="rtl\pages\ui\alerts.html" />
+    <Content Include="rtl\pages\ui\animations.html" />
+    <Content Include="rtl\pages\ui\badges.html" />
+    <Content Include="rtl\pages\ui\buttons.html" />
+    <Content Include="rtl\pages\ui\cards.html" />
+    <Content Include="rtl\pages\ui\collapse.html" />
+    <Content Include="rtl\pages\ui\dialogs.html" />
+    <Content Include="rtl\pages\ui\helper-classes.html" />
+    <Content Include="rtl\pages\ui\labels.html" />
+    <Content Include="rtl\pages\ui\list-group.html" />
+    <Content Include="rtl\pages\ui\media-object.html" />
+    <Content Include="rtl\pages\ui\modal.html" />
+    <Content Include="rtl\pages\ui\notice-object.html" />
+    <Content Include="rtl\pages\ui\notifications.html" />
+    <Content Include="rtl\pages\ui\preloaders.html" />
+    <Content Include="rtl\pages\ui\progressbars.html" />
+    <Content Include="rtl\pages\ui\range-sliders.html" />
+    <Content Include="rtl\pages\ui\tabs.html" />
+    <Content Include="rtl\pages\ui\typography.html" />
+    <Content Include="rtl\pages\ui\waves.html" />
+    <Content Include="rtl\pages\widgets\widget.html" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Warehouses\cartonType.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ClassProject\warehouses\Carton_type.cs" />
+    <Compile Include="ClassProject\warehouses\Measurement.cs" />
+    <Compile Include="ClassProject\warehouses\Specification.cs" />
+    <Compile Include="Controllers\WarehousesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102030850230_baidaa.cs" />
+    <Compile Include="Migrations\202102030850230_baidaa.designer.cs">
+      <DependentUpon>202102030850230_baidaa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\baida2021.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="rtl\assets\fonts\fontawesome\fa-brands-400.eot" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-brands-400.ttf" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-brands-400.woff" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-brands-400.woff2" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-brands-400d41d.eot" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-regular-400.eot" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-regular-400.ttf" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-regular-400.woff" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-regular-400.woff2" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-regular-400d41d.eot" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-solid-900.eot" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-solid-900.ttf" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-solid-900.woff" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-solid-900.woff2" />
+    <Content Include="rtl\assets\fonts\fontawesome\fa-solid-900d41d.eot" />
+    <Content Include="rtl\assets\fonts\iconfont\MaterialIcons-Regular.eot" />
+    <Content Include="rtl\assets\fonts\iconfont\MaterialIcons-Regular.ttf" />
+    <Content Include="rtl\assets\fonts\iconfont\MaterialIcons-Regular.woff" />
+    <Content Include="rtl\assets\fonts\iconfont\MaterialIcons-Regular.woff2" />
+    <Content Include="rtl\assets\fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="rtl\assets\fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="rtl\assets\fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="rtl\assets\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="rtl\assets\fonts\poppins\poppins-v5-latin-regulard41d.eot" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\fonts\lgd41d.eot" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\fonts\lgd641.eot" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\fonts\lgd641.ttf" />
+    <Content Include="rtl\assets\js\bundles\lightgallery\dist\fonts\lgd641.woff" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Warehouses\AddtypeCorton.cshtml" />
+    <Content Include="Views\Warehouses\EdittypeCorton.cshtml" />
+    <Content Include="Views\Warehouses\getspecifications.cshtml" />
+    <Content Include="Views\Warehouses\Addspecifications.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202102030850230_baidaa.resx">
+      <DependentUpon>202102030850230_baidaa.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54725</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54725/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,176 @@
+﻿@model IEnumerable<BAIDA2021.ClassProject.Carton_type>
+@{
+    ViewBag.Title = "cartonType";
+}
+
+
+<!-- Multi Select Css -->
+<link href="~/rtl/assets/js/bundles/multiselect/css/multi-select.css" rel="stylesheet">
+<!-- Plugins Core Css -->
+<link href="~/rtl/assets/css/app.min.css" rel="stylesheet">
+<link href="~/rtl/assets/js/bundles/materialize-rtl/materialize-rtl.min.css" rel="stylesheet">
+<link href="~/rtl/assets/css/form.min.css" rel="stylesheet">
+<!-- Custom Css -->
+<link href="~/rtl/assets/css/style.css" rel="stylesheet">
+<!-- You can choose a theme from css/styles instead of get all themes -->
+<link href="~/rtl/assets/css/styles/all-themes.css" rel="stylesheet" />
+
+<style>
+    .table th, .table td {
+        padding: 0.14rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        text-align: center;
+    }
+</style>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">المستودعات</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a href="#">
+                                <i class="fas fa-home"></i>انواع الورق والكرتون
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="body">
+                <div class="button-demo">
+                    <input type="button" class="btn-hover btn-border-radius color-1" value="اضافة" onclick="location.href='@Url.Action("AddtypeCorton", "Warehouses")'" />
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Exportable Table -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table id="tableExport"
+                                   class="display table table-hover table-checkable order-column m-t-20 width-per-100">
+                                <thead>
+                                    <tr>
+                                        <th>نوع الكرتون </th>
+                                        <th>عدد المواصفات </th>
+                                        <th></th>
+
+                                    </tr>
+                                </thead>
+
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+
+                                        <tr id="@item.id">
+                                            <td>
+
+                                                @Html.ActionLink(item.Type, "getspecifications", "Warehouses",
+                 new { id = item.id }, // <-- Route value
+                 null // <-- htmlArguments
+                )
+                                            </td>
+
+
+                                            <td>
+                                                @item.Spec_Number
+                                            </td>
+
+
+                                            <td>
+                                            
+
+                                                <button  class="btn tblActnBtn"  title="تعديل">
+                                                    <a href='@Url.Action("EdittypeCorton", "Warehouses",new { @id =item.id})'>
+
+                                                        <i class="material-icons">mode_edit</i>
+                                                    </a>
+                                                </button>
+                                                <button class="btn tblActnBtn" onclick="return confirm('هل انت متأكد؟')" title="حذف">
+                                                    <a href='#' onclick="Delete(@item.id);">
+
+                                                        <i class="material-icons">delete</i>
+                                                    </a>
+                                                </button>
+
+
+
+
+                                    
+
+                                            </td>
+                                        </tr>
+
+                                    }
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>نوع الكرتون </th>
+                                        <th>عدد المواصفات </th>
+                                        <th></th>
+
+
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Exportable Table -->
+    </div>
+</section>
+
+
+
+<script src="~/rtl/assets/js/app.min.js"></script>
+<script src="~/rtl/assets/js/table.min.js"></script>
+<!-- Custom Js -->
+<script src="~/rtl/assets/js/admin.js"></script>
+
+<script src="~/rtl/assets/js/bundles/export-tables/dataTables.buttons.min.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/buttons.flash.min.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/jszip.min.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/pdfmake.min.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/vfs_fonts.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/buttons.html5.min.js"></script>
+<script src="~/rtl/assets/js/bundles/export-tables/buttons.print.min.js"></script>
+<script src="~/rtl/assets/js/pages/tables/jquery-datatable.js"></script>
+
+<script>
+    function Delete(Id)
+    {
+        $.ajax({
+            type: "Get",
+            url: "/Warehouses/DeletetypeCorton?id=" + Id,
+            success: function (Data) {
+                $("#" + Id).remove();
+            },
+            error: function () {
+             //something go wrong
+            }
+
+        });
+    }
+</script>
+
